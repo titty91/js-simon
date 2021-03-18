@@ -25,7 +25,7 @@
         var arrNumber = [];
         for (var i = 0; i < 5; i++) {
           var NumbRnd = Math.floor(Math.random()*max)+min;
-          if(!arrNumber.includes(NumbRnd)){
+          if(!arrNumber.includes(NumbRnd)){// se non è incluso allora lo inserisci
             arrNumber.push(NumbRnd);
           }
         }
@@ -41,33 +41,22 @@
         var numerIndovinati= [];
         while(untNum.length < 5){
           var utente = parseInt(prompt('inserisci numeri'));
+          //escludo i doppioni
           if(!untNum.includes(utente)){
              untNum.push(utente);
+
              if(numRnd.includes(utente)){
                numerIndovinati.push(utente);
-
              }
           }
         }
-        //console.log(untNum, numerIndovinati);
-      },3000);
+        console.log('hai indovinato: ', numerIndovinati, numerIndovinati.length);
+        document.getElementById('tit').innerHTML = 'hai indovinato: '+numerIndovinati.length;
+      },5*1000);
 
       alert('ricoda questi numeri: ' + numRnd );
 
-      // setTimeout(myFunction,0);
-      // function myFunction(){
-      //
-      // setTimeout(utente, 3000);
-      // for (var i = 0; i < 5; i++) {
-      //   var utente = parseInt(prompt('riscrivi i numeri'));
-      //   if(utente == numberRdm(1,50)){
-      //     console.log('corrispondono' + utente );
-      //   }else{
-      //     console.log('non corrisponde ' + utente);
-      //   }
-      // }
-      //
-      // }
+
 
     </script>
   </body>
